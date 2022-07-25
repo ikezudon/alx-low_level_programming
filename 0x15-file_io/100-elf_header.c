@@ -29,7 +29,7 @@ void check_elf(unsigned char *e_ident)
 
 {
 int index;
-for (index = 0; index < 4; index++
+for (index = 0; index < 4; index++)
 {
 if (e_ident[index] != 127 &&
 e_ident[index] != 'E' &&
@@ -316,6 +316,7 @@ close_elf(o);
 dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 exit(98);
 }
+
 check_elf(header->e_ident);
 printf("ELF Header:\n");
 print_magic(header->e_ident);
